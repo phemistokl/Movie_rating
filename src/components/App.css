@@ -1,0 +1,52 @@
+.App {
+    text-align: center;
+}
+  
+.App-logo {
+    animation: App-logo-spin infinite 20s linear;
+    height: 80px;
+}
+  
+.App-header {
+    background-color: #222;
+    height: 150px;
+    padding: 20px;
+    color: white;
+}
+  
+.App-title {
+    font-size: 1.5em;
+}
+  
+.App-intro {
+    font-size: large;
+}
+  
+#movie-comment {
+    resize: vertical;
+}
+
+div.star {
+    cursor: pointer;
+    height: 25px;
+    width: 25px;
+    margin: 2px;
+    float: left;
+    background-color: #7f7f7f;
+    clip-path: polygon(50% 0%, 63% 38%, 100% 38%, 69% 59%, 82% 100%, 50% 75%, 18% 100%, 31% 59%, 0% 38%, 37% 38%);
+}  
+
+div.star.selected {
+    background-color: red;
+}
+  
+@keyframes App-logo-spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+.table-responsive div.star {
+    cursor: pointer;
+    height: 10px;
+    width: 10px;
+}
