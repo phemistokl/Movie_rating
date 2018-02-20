@@ -155,4 +155,15 @@ function modal( state = { isOpen: false, newEntry: false }, action) {
   }
 };
 
-export default combineReducers({ movies, movie, modal, routing });
+function filter(state = "", action) {
+	switch(action.type) {
+		case 'SEARCH_MOVIE': {
+			return action.search;
+		}
+		default: {
+			return state;
+		}
+	}
+}
+
+export default combineReducers({ movies, movie, modal, filter, routing });

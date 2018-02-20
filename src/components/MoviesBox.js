@@ -9,14 +9,15 @@ import Movie from './Movie';
 import Modal from './Modal';
 import Search from './Search';
 
-import { updateMovie, createMovie, toggleModal } from '../actions';
+import { updateMovie, createMovie, toggleModal, searchMovie } from '../actions';
 
-@connect(mapStateToProps, { updateMovie, createMovie, toggleModal })
+@connect(mapStateToProps, { updateMovie, createMovie, toggleModal, searchMovie })
 export default class MoviesBox extends Component {
   constructor(props) {
     super(props);
 
     this.createMovie = this.createMovie.bind(this);
+    this.logSearch = this.logSearch.bind(this);
 
     this.state ={
       movies: []
@@ -29,7 +30,7 @@ export default class MoviesBox extends Component {
   }
 
   logSearch(search) {
-    console.log(search)
+    this.props.searchMovie(search);
   }
 
   render() {
@@ -68,8 +69,9 @@ export default class MoviesBox extends Component {
 }
 
 function mapStateToProps(state) {
+  console.log(state.filter)
   return {
-    movies: state.movies.movies,
+    movies: state.movies.movies.filter(movie => movie.name.toLowerCase().includes(state.filter.toLowerCase())),
     isOpen: state.modal.isOpen
   };
 }

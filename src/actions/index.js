@@ -41,7 +41,7 @@ export const rateMovie = (id, rating) => {
 		id,
 		rating: rating
 	}
-}
+};
 
 export const currentMovie = id => {
 	return {
@@ -50,15 +50,15 @@ export const currentMovie = id => {
 	};
 };
 
-// export default searchMovie = search => {
-// 	return {
-// 		type: 'SEARCH_MOVIE',
-// 		search
-// 	}
-// }
+export const searchMovie = search => {
+	return {
+		type: 'SEARCH_MOVIE',
+		search
+	}
+};
 
 export const toggleModal = () => {
 	return {
     	type: 'TOGGLE_MODAL'
 	};
-}
+};

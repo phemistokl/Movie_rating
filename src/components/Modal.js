@@ -109,10 +109,6 @@ export default class Modal extends Component {
       });
     }
 
-    logMe(s) {
-      console.log(s);
-    }
-
     render() {
       if (!this.props.isOpen) {
         this.closeModal();
